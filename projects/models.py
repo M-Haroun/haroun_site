@@ -30,9 +30,9 @@ class Project(models.Model):
     
     title = models.CharField(max_length=200,blank=False, null= False)
     description = models.TextField(max_length=700,blank=False, null= False)
-    category = models.ForeignKey(Category, on_delete=models.PROTECT,null=True,  blank=True)
+    category = models.ForeignKey(Category,null=True,  blank=True, on_delete=models.PROTECT)
     main_img = models.ImageField(upload_to='photos/main_project_photos', null=False,  blank=False)
-    Technologies = models.ManyToManyField(Technology, on_delete=models.PROTECT,null=True,  blank=True) 
+    Technologies = models.ManyToManyField(Technology,null=True,  blank=True) 
     link = models.URLField(max_length=500, blank=True, null=True)
     status = models.CharField(max_length=50, null=True,  blank=True, choices= project_status)
     updated = models.DateTimeField(default=datetime.now(),blank=True, null= True)

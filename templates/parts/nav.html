@@ -1,7 +1,30 @@
 {% load static %}
-  <link rel="stylesheet" href="{% static 'dist/css/nav.css' %}" type = "text/css">
-
-    <!-- Navigation Bar -->
+<style>
+      nav{
+        background-color:#2e83e3;
+    }
+    nav ul{
+        padding: 0;
+        margin:0;
+        list-style-type: none;
+        display:flex;
+        justify-content: center; 
+    }
+    nav ul li{
+        margin: 0 15px;
+    }
+    nav ul li a{
+        color:white;
+        font-size:20px;
+        padding: 8px 16px;
+        border-radius: 4%;
+        transition: background-color 0.3s;
+    }
+    nav ul li a:hover{
+        background-color:#f9f7f7;
+    }
+</style>
+<!-- Navigation Bar -->
     <nav>
         <ul>
             <li><a href="{% url 'index' %}">Home</a></li>

@@ -2,13 +2,19 @@
 {% load static %}
 {% block title %}projects{% endblock  %}
 {%block contents%}
-  <h1 style='color: brown'>Welcome to all projects!</h1>
-  <ul>
-    {% for item in projects %}
-      <li>
-        <a target='_blank'  href="{%url 'project' pk=item.pk%}">{{item.title}}</a>
-      </li>  
-    {% endfor %}
-  </ul>  
-
+  <div class='container'>
+    <h1 style='color: brown'>Welcome to my all projects!</h1>
+    <div class='row'>
+      {% for item in projects %}
+      <br>
+      <div class='col-4'>
+        <div class='card card-body h-100 border-info'>
+          <img src="{{ item.main_img.url }}" alt="{{ item.title }}" width="300" height='250'>
+          <hr>
+          <a target='_blank'  href="{%url 'project' pk=item.pk%}"><h5>{{item.title}}</h5></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>  
 {% endblock %}

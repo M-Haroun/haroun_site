@@ -3,5 +3,23 @@
 {%block contents%}
   <h1 style='color: red'>Welcome to Haroun website!</h1>
   <p>This is my first paragraph.</p>
+    <div id="carouselExample" class="carousel slide container w-100" data-bs-interval="5000">
+    <div class="carousel-inner">
+      {% for image in slides_images %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <img src="{{ image.images.url }}" class="w-100" alt="">
+        </div>
+      {% endfor %}
+    </div>
+    <a href="#carouselExample" class="carousel-control-prev" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a href="#carouselExample"class="carousel-control-next" type="button" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+
+
+
 
 {% endblock %}
